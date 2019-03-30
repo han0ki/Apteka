@@ -18,7 +18,7 @@
               enabled : true
             },
             slider_Threshold : 25, // Percentage of  dragX before go to next/prev slider
-            slider_Speed : 1000,
+            slider_Speed : 500,
             slider_Ease : 'cubic-bezier(0.5, 0, 0.5, 1)',  // see http://cubic-bezier.com/
             slider_Breakpoints : { // Kind of media queries ( can add more if you know how to do it :D and if you need )
                 default : {
@@ -36,15 +36,7 @@
         }, options);
 
         /*:::::::: LOADER ::::::::*/
-        var loaderHtml = '<div class="loaderWrap">'+
-                          '<div class="ball-scale-multiple">'+
-                          '<div></div>'+
-                          '<div></div>'+
-                          '<div></div>'+
-                          '<div></div>'+
-                          '<div></div>'+
-                          '</div></div>';
-        $(slider_Opts.slider_Wrap).each( function(){$(this).append(loaderHtml);});
+        
         function loader(visibility) {
             var thisLoader = $(slider_Opts.slider_Wrap +' .loaderWrap');
             if (visibility === true)
@@ -56,7 +48,7 @@
         /*:::::::: RESPONSIVE ::::::::*/
         function setResponsive() {
             var VW = document.documentElement.clientWidth;
-            var VH = document.documentElement.clientHeight;
+           
             if(slider_Opts.slider_Breakpoints.default.height === 'full'){
               $(pbSlider.slider_Wrap + '.o-sliderContainer,'+ pbSlider.slider_Wrap + ' ' + pbSlider.slider_Item).css({height: VH});
             } else if (VW >= slider_Opts.slider_Breakpoints.tablet.media) {
@@ -67,7 +59,7 @@
                 $(pbSlider.slider_Wrap + '.o-sliderContainer,'+ pbSlider.slider_Wrap + ' ' + pbSlider.slider_Item).css({height: slider_Opts.slider_Breakpoints.smartphone.height});
             }
         }
-        $(window).resize(function() {setResponsive();});
+        
 
 
 
@@ -104,32 +96,14 @@
               $(pbSlider.slider_Wrap).find('.a-sliderBg__container').append('<div class="a-sliderBg"></div>');
 
             }
-            //$('.a-sliderBg').css({'background-size': '100% 400%';})
+            
 
           $(pbSlider.slider_Item).each(function(){
 
             var bg = $(this).attr('data-image');
             $(this).css({'background-image':'url('+bg+')'});
-            //$(this).children('.a-sliderBg').css({'background-image':'url('+bg+')'});
+            
           });
-
-          // $(pbSlider.slider_Item).find('.a-sliderBg').each(function(item){
-          //   var pbSliceH = $(this).width();
-          //   console.log(pbSliceH);
-          //
-          //   if($(this).is('.a-sliderBg--top')){
-          //     $(this).css('background-position', '0 0');
-          //   }
-          //   if($(this).is('.a-sliderBg--middle')){
-          //     $(this).css('background-position',  -pbSliceH +'px 0px');
-          //   }
-          //   if($(this).is('.a-sliderBg--middle2')){
-          //     $(this).css('background-position',  -(pbSliceH*2) +'px 0px');
-          //   }
-          //   if($(this).is('.a-sliderBg--bottom')){
-          //     $(this).css('background-position',  -(pbSliceH*3) +'px 0px');
-          //   }
-          // });
           setResponsive();
           setTimeout ( function(){
               loader(false);
@@ -185,7 +159,7 @@
               $(pbSlider.slider_Item + '[data-id=slide-' + pbSlider.slider_Active + ']').addClass('isActive');
             },400);
             /*:::::::: HAMMER => see http://hammerjs.github.io/  ::::::::*/
-            if(slider_Opts.slider_Drag === true){
+            if(slider_Opts.slider_Drag === false){
               $(pbSlider.slider_Draggable).addClass('isDraggable');
               var stuff4hammer = document.querySelector(pbSlider.slider_Wrap);
               var hammerOpts =   {
@@ -317,7 +291,7 @@
                 } else {
                     $(pbSlider.slider_Wrap + ' .o-slider-next').trigger('click');
                 }
-            }, 3000);
+            }, 1000);
         }
         //pbSlider.auto();
         pbSlider.pbInit(this);
