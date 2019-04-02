@@ -34,7 +34,7 @@
     color: #1fc27f;
     margin-left: 20px;">menu</i></a>
         	
-<ul class="side-nav" id="mobile-demo">
+<ul class="side-nav" id="mobile-demo" style="z-index:999; ">
         <li><a href="sass.html">Home</a></li>
         <li><a href="badges.html">Products</a></li>
         <li><a href="collapsible.html">Services</a></li>
@@ -71,6 +71,7 @@
 
 			</nav>
 		</div>
+
 <section class="katalog">
 	<div class='o-sliderContainer' id="pbSliderWrap0" style="margin-top:0; ">
   <div class='o-slider' id='pbSlider0'>
@@ -133,7 +134,6 @@ Standard Crew</h1>
   </div>
 </div>
 
-
 <div style="clear:both;"></div>
 </section>
 
@@ -150,5 +150,14 @@ Standard Crew</h1>
 <script src="js/materialize.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/script.js"></script>
+<script>
+	$(window).resize(function() {
+  if(document.documentElement.clientWidth < 415) {
+    window.setTimeout('location.reload()', 500);
+  }
+});
+</script>
+<script>
+
 </body>
 </html>
