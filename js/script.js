@@ -22,7 +22,8 @@
             slider_Ease : 'cubic-bezier(0.5, 0, 0.5, 1)',  // see http://cubic-bezier.com/
             slider_Breakpoints : { // Kind of media queries ( can add more if you know how to do it :D and if you need )
                 default : {
-                    height : 500 //  height on desktop
+                    
+                   //  height on desktop
                 },
                 tablet : {
                     height : 400, // height on tablet
@@ -316,87 +317,5 @@ $('#pbSlider0').pbTouchSlider({
     enabled : true,
     preview : true
   },
-  slider_Breakpoints: {
-      default: {
-          height: 500
-      },
-      tablet: {
-          height: 350,
-          media: 1024
-      },
-      smartphone: {
-          height: 250,
-          media: 768
-      }
-  }
+  
 });
-$('#pbSlider').pbTouchSlider({
-  slider_Wrap: '#pbSliderWrap',
-  slider_Item_Width :100,
-  slider_Threshold: 50,
-  slider_Speed:400,
-  slider_Ease:'linear',
-  slider_Drag : false,
-  slider_Arrows: {
-    enabled : false
-  },
-  slider_Breakpoints: {
-      default: {
-          height: 200
-      },
-      tablet: {
-          height: 250,
-          media: 1024
-      },
-      smartphone: {
-          height: 200,
-          media: 768
-      }
-  }
-});
-$('#pbSlider2').pbTouchSlider({
-  slider_Wrap: '#pbSliderWrap2',
-  slider_Item_Width : 100,
-  slider_Threshold: 25,
-  slider_Speed:1000 ,
-  slider_Ease:'cubic-bezier(.16,.92,0,.8)',
-  slider_Dots: {
-    class:'.slider-pagination',
-    enabled : false
-  },
-  slider_Breakpoints: {
-      default: {
-          height: 300
-      },
-      tablet: {
-          height: 250,
-          media: 1024
-      },
-      smartphone: {
-          height: 200,
-          media: 768
-      }
-  }
-});
-$('#pbSlider3').pbTouchSlider({
-  slider_Wrap: '#pbSliderWrap3',
-  slider_Item_Width : 90,
-  slider_Threshold: 50 ,
-  slider_Speed:400 ,
-  slider_Ease:'linear',
-  slider_Breakpoints: {
-      default: {
-          height: 400
-      },
-      tablet: {
-          height: 300,
-          media: 1024
-      },
-      smartphone: {
-          height: 200,
-          media: 768
-      }
-  }
-});
-
-
